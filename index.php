@@ -15,36 +15,40 @@ if ($conn->connect_error) {
 
 // Exemple de requête SQL
 
-$sql = "(\n"
+// $sql = "(\n"
 
-    . "  SELECT * FROM country WHERE chapeau = 1 ORDER BY RAND() LIMIT 1\n"
+//     . "  SELECT * FROM country WHERE chapeau = 1 ORDER BY RAND() LIMIT 1\n"
 
-    . ")\n"
+//     . ")\n"
 
-    . "UNION ALL\n"
+//     . "UNION ALL\n"
 
-    . "(\n"
+//     . "(\n"
 
-    . "  SELECT * FROM country WHERE chapeau = 2 ORDER BY RAND() LIMIT 1\n"
+//     . "  SELECT * FROM country WHERE chapeau = 2 ORDER BY RAND() LIMIT 1\n"
  
-    . ")\n"
+//     . ")\n"
 
-    . "UNION ALL\n"
+//     . "UNION ALL\n"
 
-    . "(\n"
+//     . "(\n"
 
-    . "  SELECT * FROM country WHERE chapeau = 3 ORDER BY RAND() LIMIT 1\n"
+//     . "  SELECT * FROM country WHERE chapeau = 3 ORDER BY RAND() LIMIT 1\n"
 
-    . ")\n"
+//     . ")\n"
 
-    . "UNION ALL\n"
+//     . "UNION ALL\n"
 
-    . "(\n"
+//     . "(\n"
 
-    . "  SELECT * FROM country WHERE chapeau = 4 ORDER BY RAND() LIMIT 1\n"
+//     . "  SELECT * FROM country WHERE chapeau = 4 ORDER BY RAND() LIMIT 1\n"
 
-    . ");";
-// $rqtTest ="( SELECT * FROM country WHERE chapeau = 1 ORDER BY RAND() LIMIT 1 ) UNION ALL ( SELECT * FROM country WHERE chapeau = 2 ORDER BY RAND() LIMIT 1 ) UNION ALL ( SELECT * FROM country WHERE chapeau = 3 ORDER BY RAND() LIMIT 1 ) UNION ALL ( SELECT * FROM country WHERE chapeau = 4 ORDER BY RAND() LIMIT 1 );";
+//     . ");";
+
+$idChapeau = 1; // Remplacez cela par l'ID du chapeau souhaité
+
+// Requête SQL pour récupérer toutes les lignes avec le même ID chapeau
+$sql = "SELECT * FROM country WHERE chapeau = $idChapeau";
 $result = $conn->query($sql);
 
 // Vérifier si la requête a réussi
