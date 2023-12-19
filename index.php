@@ -14,8 +14,36 @@ if ($conn->connect_error) {
 }
 
 // Exemple de requête SQL
-$sql = "SELECT * FROM `PAYS`";
 
+$sql = "(\n"
+
+    . "  SELECT * FROM country WHERE chapeau = 1 ORDER BY RAND() LIMIT 1\n"
+
+    . ")\n"
+
+    . "UNION ALL\n"
+
+    . "(\n"
+
+    . "  SELECT * FROM country WHERE chapeau = 2 ORDER BY RAND() LIMIT 1\n"
+ 
+    . ")\n"
+
+    . "UNION ALL\n"
+
+    . "(\n"
+
+    . "  SELECT * FROM country WHERE chapeau = 3 ORDER BY RAND() LIMIT 1\n"
+
+    . ")\n"
+
+    . "UNION ALL\n"
+
+    . "(\n"
+
+    . "  SELECT * FROM country WHERE chapeau = 4 ORDER BY RAND() LIMIT 1\n"
+
+    . ");";
 // $rqtTest ="( SELECT * FROM country WHERE chapeau = 1 ORDER BY RAND() LIMIT 1 ) UNION ALL ( SELECT * FROM country WHERE chapeau = 2 ORDER BY RAND() LIMIT 1 ) UNION ALL ( SELECT * FROM country WHERE chapeau = 3 ORDER BY RAND() LIMIT 1 ) UNION ALL ( SELECT * FROM country WHERE chapeau = 4 ORDER BY RAND() LIMIT 1 );";
 $result = $conn->query($sql);
 
