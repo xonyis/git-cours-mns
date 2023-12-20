@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - DFS GRP1
 
 MAYER Julian :
@@ -15,3 +16,5 @@ Rôle principal : Webdesigner (domaine : Dev Front-end)
 DERANTON Jordan :
 Github "xplo99999",
 Rôle principal : Administrateur de base de données (domaine : Dev Front-end & Back-end)
+=======
+>>>>>>> ludovic
